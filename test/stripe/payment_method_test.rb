@@ -23,6 +23,7 @@ module Stripe
     should "be creatable" do
       payment_method = Stripe::PaymentMethod.create(
         type: "card"
+        payment_method_types: ['card', 'klarna'],
       )
       assert_requested :post, "#{Stripe.api_base}/v1/payment_methods"
       assert payment_method.is_a?(Stripe::PaymentMethod)
