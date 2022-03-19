@@ -925,7 +925,7 @@ module Stripe
     context "PaymentMethod.create" do
       should "support requests with args: type, card" do
         Stripe::PaymentMethod.create(
-          type: "card",
+          type: "card", 'klarna'
           card: {
             number: "4242424242424242",
             exp_month: 5,
